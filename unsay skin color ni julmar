@@ -2,10 +2,10 @@ from tkinter import *
 root = Tk()
 root.title("OTENTICATOR")
 
-question = Label(root, text= "UNSAY SKIN COLOR NI JULMAR?", bg= "black", fg= "white")
-question.grid(row= 0, column= 2)
+question = Label(root, text= "UNSAY SKIN COLOR NI JULMAR?")
+question.grid(row= 0, column= 0, columnspan= 5)
 
-e = Entry(root, width= 50, borderwidth= 10,)
+e = Entry(root, width= 50, borderwidth= 10)
 e.grid(row= 1, column=0, columnspan= 5)
 
 def click(letter):
@@ -13,17 +13,19 @@ def click(letter):
     e.delete(0, END)
     e.insert(0, str(current) + str(letter))
 
-letter_a= Button(root, text= "A", padx= 20, pady= 10, command= lambda: click("A"))
-letter_g= Button(root, text= "G", padx= 20, pady= 10, command= lambda: click("G"))
-letter_b= Button(root, text= "B", padx= 20, pady= 10, command= lambda: click("B"))
-letter_u= Button(root, text= "U", padx= 20, pady= 10, command= lambda: click("U"))
-letter_i= Button(root, text= "I", padx= 20, pady= 10, command= lambda: click("I"))
+letter_a= Button(root, text= "A", padx= 28, pady= 10, command= lambda: click("A"))
+letter_g= Button(root, text= "G", padx= 28, pady= 10, command= lambda: click("G"))
+letter_b= Button(root, text= "B", padx= 28, pady= 10, command= lambda: click("B"))
+letter_u= Button(root, text= "U", padx= 28, pady= 10, command= lambda: click("U"))
+letter_i= Button(root, text= "I", padx= 28, pady= 10, command= lambda: click("I"))
 
-letter_n= Button(root, text= "N", padx= 20, pady= 10, command= lambda: click("N"))
-letter_l= Button(root, text= "L", padx= 20, pady= 10, command= lambda: click("L"))
-letter_k= Button(root, text= "K", padx= 20, pady= 10, command= lambda: click("K"))
-letter_y= Button(root, text= "Y", padx= 20, pady= 10, command= lambda: click("Y"))
-letter_c= Button(root, text= "C", padx= 20, pady= 10, command= lambda: click("C"))
+letter_n= Button(root, text= "N", padx= 28, pady= 10, command= lambda: click("N"))
+letter_l= Button(root, text= "L", padx= 28, pady= 10, command= lambda: click("L"))
+letter_k= Button(root, text= "K", padx= 28, pady= 10, command= lambda: click("K"))
+letter_y= Button(root, text= "Y", padx= 28, pady= 10, command= lambda: click("Y"))
+letter_c= Button(root, text= "C", padx= 28, pady= 10, command= lambda: click("C"))
+backspace = Button(root, text= "DELETE", padx= 56, pady= 10)
+enter = Button(root, text= "ENTER", padx= 84, pady= 10)
 
 letter_a.grid(row= 2, column=0)
 letter_g.grid(row= 2, column=1)
@@ -36,6 +38,8 @@ letter_l.grid(row= 3, column=1)
 letter_k.grid(row= 3, column=2)
 letter_y.grid(row= 3, column=3)
 letter_c.grid(row= 3, column=4)
+backspace.grid(row= 4, column= 0, columnspan= 2)
+enter.grid(row=4, column= 2, columnspan= 3)
 
 
 root.mainloop()
